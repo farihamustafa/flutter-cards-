@@ -14,7 +14,7 @@ class _CardsState extends State<Cards> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          ' C A R D S',
+          ' F R U I T S',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
