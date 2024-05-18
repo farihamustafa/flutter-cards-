@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/pages/Grids.dart';
 import 'package:project/pages/cards.dart';
 
 main() {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Cards(),
+      home: Gridview(),
       debugShowCheckedModeBanner: false,
     );
   }

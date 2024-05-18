@@ -45,46 +45,28 @@ class _CardsState extends State<Cards> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                getcard(
-                    'Strawberry',
-                    '\$200',
-                    Image.network(
-                        "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=1430&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")),
-                getcard(
-                    'Pineapple',
-                    '\$55',
-                    Image.network(
-                        "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"))
+                getcard('Strawberry', '\$200',
+                    "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=1430&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+                getcard('Pineapple', '\$55',
+                    "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                getcard(
-                    'Raspberry',
-                    '\$400',
-                    Image.network(
-                        "https://images.unsplash.com/photo-1577069861033-55d04cec4ef5?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")),
-                getcard(
-                    'Orange',
-                    '\$66',
-                    Image.network(
-                        "https://images.unsplash.com/photo-1586439702132-55ce0da661dd?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"))
+                getcard('Raspberry', '\$400',
+                    "https://images.unsplash.com/photo-1577069861033-55d04cec4ef5?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+                getcard('Orange', '\$66',
+                    "https://images.unsplash.com/photo-1586439702132-55ce0da661dd?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                getcard(
-                    'Blueberry',
-                    '\$500',
-                    Image.network(
-                        "https://images.unsplash.com/photo-1594002348772-bc0cb57ade8b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")),
-                getcard(
-                    'Grapes',
-                    '\$55',
-                    Image.network(
-                        "https://images.unsplash.com/photo-1604132847935-2fa64ea9c4a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"))
+                getcard('Blueberry', '\$500',
+                    "https://images.unsplash.com/photo-1594002348772-bc0cb57ade8b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+                getcard('Grapes', '\$55',
+                    "https://images.unsplash.com/photo-1604132847935-2fa64ea9c4a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
               ],
             ),
           ],
@@ -94,7 +76,7 @@ class _CardsState extends State<Cards> {
   }
 }
 
-Widget getcard(String product, String price, Image) {
+Widget getcard(String product, String price, img) {
   return Padding(
     padding: const EdgeInsets.all(2.0),
     child: Container(
@@ -107,7 +89,11 @@ Widget getcard(String product, String price, Image) {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image,
+              child: Image.network(
+                img,
+                fit: BoxFit.cover,
+                height: 288,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
