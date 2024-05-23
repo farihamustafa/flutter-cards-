@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/pages/details.dart';
 import 'package:project/pages/gridmodel.dart';
 
 class Gridview extends StatefulWidget {
@@ -111,17 +112,27 @@ class _GridviewState extends State<Gridview> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Container(
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, crossAxisSpacing: 20, mainAxisSpacing: 20),
-            itemCount: prod.length,
-            itemBuilder: (context, index) {
-              return getcard(
-                  name: prod[index].name,
-                  price: prod[index].price,
-                  img: prod[index].img);
-            },
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      Details(name: name, price: price, img: img),
+                ));
+          },
+          child: Container(
+            child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, crossAxisSpacing: 20, mainAxisSpacing: 20),
+              itemCount: prod.length,
+              itemBuilder: (context, index) {
+                return getcard(
+                    name: prod[index].name,
+                    price: prod[index].price,
+                    img: prod[index].img);
+              },
+            ),
           ),
         ),
       ),
